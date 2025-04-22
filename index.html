@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поиск кратчайшего пути</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Поиск кратчайшего пути</h1>
+    </header>
+    <main>
+      <section id="input-module">
+        <h2>Добавление графа</h2>
+        <form id="graph-form">
+          <label>
+            Вершина 1:
+            <input type="text" id="node1" required>
+          </label>
+          <label>
+            Вершина 2:
+            <input type="text" id="node2" required>
+          </label>
+          <label>
+            Вес ребра:
+            <input type="number" id="weight" min="1" required>
+          </label>
+          <button type="button" id="add-edge">Добавить ребро</button>
+        </form>
+      </section>
+      <section id="graph-visualization">
+        <h2>Визуализация графа</h2>
+        <svg id="graph"></svg>
+      </section>
+      <section id="path-module">
+        <h2>Кратчайший путь</h2>
+        <form id="path-form">
+          <label>
+            Начальная вершина:
+            <input type="text" id="start-node" required>
+          </label>
+          <label>
+            Конечная вершина:
+            <input type="text" id="end-node" required>
+          </label>
+          <button type="button" id="find-path">Найти путь</button>
+        </form>
+        <p id="path-result"></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
